@@ -21,7 +21,7 @@ def won?(board)
   end
 end
 
-# Using if and ifels
+# Using if and elsif
 # def won?(board)
   # if board.none?{|i| i == "X" || i == "O"}
   #   false
