@@ -17,10 +17,8 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   WIN.COMBINATIONS.detect do |win_combo|
-    if board[win_combo[0]] == board[win_combo[1]] && board[win_combo[1]] == board[win_combo[2]] && !position_taken(board, index)
+    board[win_combo[0]] == board[win_combo[1]] && board[win_combo[1]] == board[win_combo[2]] && !position_taken(board, index)
       return win_combo
-    else
-      false
     end
   # if board.none?{|i| i == "X" || i == "O"}
   #   false
