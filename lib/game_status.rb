@@ -16,20 +16,22 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  if board.none?{|i| i == "X" || i == "O"}
-    false
-  elsif
-    WIN_COMBINATIONS.select do |win_combination|
-      position_1 = board[win_combination[0]]
-      position_2 = board[win_combination[1]]
-      position_3 = board[win_combination[2]]
-
-      if position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O"
-        return win_combination
-      end
-    end
-  end
-  false
+  WIN.COMBINATIONS.detect do |win_combo|
+    if board[win_combo[0]] == board[win_combo[1]] && board[win_combo[1]] == board[win_combo[2]] && !position_taken(board, index)
+  # if board.none?{|i| i == "X" || i == "O"}
+  #   false
+  # elsif
+  #   WIN_COMBINATIONS.select do |win_combination|
+  #     position_1 = board[win_combination[0]]
+  #     position_2 = board[win_combination[1]]
+  #     position_3 = board[win_combination[2]]
+  # 
+  #     if position_1 == "X" && position_2 == "X" && position_3 == "X" || position_1 == "O" && position_2 == "O" && position_3 == "O"
+  #       return win_combination
+  #     end
+  #   end
+  # end
+  # false
 end
 
 def full?(board)
